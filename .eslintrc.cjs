@@ -8,7 +8,7 @@ module.exports = {
   globals: {
     astroHTML: true,
   },
-  ignorePatterns: ['.eslintrc.cjs'],
+  ignorePatterns: ['.eslintrc.cjs', 'tailwind.config.mjs'],
   overrides: [
     {
       files: ['*.ts'],
@@ -34,6 +34,9 @@ module.exports = {
     {
       files: ['*.vue'],
       extends: ['plugin:vue/vue3-recommended'],
+      rules: {
+        'vue/multi-word-component-names': 'off',
+      },
     },
   ],
 };
