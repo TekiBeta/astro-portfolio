@@ -1,5 +1,10 @@
 module.exports = {
+  root: true,
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  env: {
+    browser: true,
+    node: true,
+  },
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
