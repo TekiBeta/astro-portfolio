@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.astro,.vue,.mjs,.cjs",
+    "eslint-fix": "eslint --ext .js,.jsx,.ts,.tsx,.astro,.vue,.mjs,.cjs, --fix"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
