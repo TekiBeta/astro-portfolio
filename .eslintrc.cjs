@@ -14,6 +14,14 @@ module.exports = {
     astroHTML: true,
   },
   ignorePatterns: ['.eslintrc.cjs', 'tailwind.config.mjs'],
+  rules: {
+    semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
+    'semi-spacing': ['error', { after: true, before: false }],
+    'semi-style': ['error', 'first'],
+    'no-extra-semi': 'error',
+    'no-unexpected-multiline': 'error',
+    'no-unreachable': 'error',
+  },
   overrides: [
     {
       files: ['*.ts'],
@@ -41,7 +49,17 @@ module.exports = {
       extends: ['plugin:vue/vue3-recommended'],
       rules: {
         'vue/multi-word-component-names': 'off',
+        'vue/html-self-closing': [
+          'error',
+          {
+            html: {
+              void: 'always',
+            },
+          },
+        ],
+        'vue/singleline-html-element-content-newline': 'off',
+        'vue/max-attributes-per-line': 'off',
       },
     },
   ],
-};
+}
