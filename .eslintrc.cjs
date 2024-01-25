@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       files: ['*.astro'],
-      extends: ['plugin:astro/recommended'],
+      extends: ['plugin:astro/recommended', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
       parser: 'astro-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser',
@@ -38,15 +38,16 @@ module.exports = {
     },
     {
       files: ['*.jsx', '*.tsx'],
-      extends: ['plugin:react/recommended'],
-      rules: {
-        'react/jsx-uses-react': 'off',
-        'react/react-in-jsx-scope': 'off',
-      },
+      extends: ['plugin:react/recommended', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
     },
     {
       files: ['*.vue'],
-      extends: ['plugin:vue/vue3-recommended'],
+      extends: ['plugin:vue/vue3-recommended', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+      parser: 'vue-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.vue'],
+      },
       rules: {
         'vue/multi-word-component-names': 'off',
         'vue/html-self-closing': [

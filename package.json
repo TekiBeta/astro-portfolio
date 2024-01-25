@@ -18,17 +18,17 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.0.8",
     "@phosphor-icons/vue": "^2.1.6",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.4",
+    "autoprefixer": "^10.4.17",
     "eslint-plugin-vue": "^9.20.1",
+    "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.1",
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.33",
     "typescript": "^5.3.3",
-    "@tailwindcss/typography": "^0.5.10",
     "vue": "^3.4.15"
   },
   "devDependencies": {
@@ -41,6 +41,7 @@
     "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.11"
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "vue-eslint-parser": "^9.4.2"
   }
 }
