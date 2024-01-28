@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {},
     colors: {
-      dark: 'rgb(19,21,26)',
+      dark: 'rgb(13,15,20)',
+      ash: '#e5e7eb',
     },
   },
   plugins: [require('@tailwindcss/typography')],

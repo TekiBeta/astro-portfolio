@@ -17,3 +17,5 @@ if (year == 2024) {
     </div>
   </footer>
 </template>
+
+<style scoped></style>

@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { PhHouseSimple, PhImages, PhInfo, PhList, PhNewspaper } from '@phosphor-icons/vue'
+import { PhHouseSimple, PhImages, PhInfo, PhList, PhNewspaper, PhX } from '@phosphor-icons/vue'
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+const handleOpen = () => {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>
@@ -14,30 +20,51 @@ import { PhHouseSimple, PhImages, PhInfo, PhList, PhNewspaper } from '@phosphor-
       <nav class="hidden md:flex">
         <div class="flex w-32 items-center justify-center px-2">
           <PhHouseSimple :size="20" />
-          <span class="">HOME</span>
+          <span class="ml-2">HOME</span>
         </div>
         <div class="flex w-32 items-center justify-center px-2">
           <PhImages :size="20" />
-          <span>GALLERY</span>
+          <span class="ml-2">GALLERY</span>
         </div>
         <div class="flex w-32 items-center justify-center px-2">
           <PhNewspaper :size="20" />
-          <span>BLOG</span>
+          <span class="ml-2">BLOG</span>
         </div>
         <div class="flex w-32 items-center justify-center px-2">
           <PhInfo :size="20" />
-          <span>ABOUT</span>
+          <span class="ml-2">ABOUT</span>
         </div>
       </nav>
 
       <!-- スマホ用 -->
       <div class="flex items-center md:hidden">
         <div class="px-4">
-          <PhList :size="32" />
+          <button class="focus:outline-none" @click="handleOpen">
+            <PhList v-show="!isOpen" :size="32" />
+            <PhX v-show="isOpen" :size="32" />
+          </button>
         </div>
       </div>
-      <nav class="fixed h-full w-full" />
     </div>
+    <!-- スマホ用項目 -->
+    <nav v-show="isOpen" class="absolute z-10 flex w-full flex-col bg-dark text-[#fff] md:hidden">
+      <div class="border-ash mx-auto flex w-10/12 items-center border-t py-4">
+        <PhHouseSimple :size="20" />
+        <span class="ml-2">HOME</span>
+      </div>
+      <div class="border-ash mx-auto flex w-10/12 items-center border-t py-4">
+        <PhImages :size="20" />
+        <span class="ml-2">GALLERY</span>
+      </div>
+      <div class="border-ash mx-auto flex w-10/12 items-center border-t py-4">
+        <PhNewspaper :size="20" />
+        <span class="ml-2">BLOG</span>
+      </div>
+      <div class="border-ash mx-auto flex w-10/12 items-center border-t py-4">
+        <PhInfo :size="20" />
+        <span class="ml-2">ABOUT</span>
+      </div>
+    </nav>
   </header>
 </template>
 
